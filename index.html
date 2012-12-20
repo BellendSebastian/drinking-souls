@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<title>Drinking Souls</title>
+	<meta charset="utf-8">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+</head>
+<body>
+	<div class="container span8">
+		<h1>Drinking Souls <small>no flash version</small></h1>
+
+		<div class="well"  id="results-list">
+			<ol id="results">
+			</ol>
+		</div>
+
+		<form action="" class="span8" id="drinking-souls">
+			<fieldset class="well">
+				<label>How many people will be playing?</label>
+				<select name="player-num">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Is any player new to Dark Souls?</label>
+				<label class="radio">
+					<input type="radio" name="new-player" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="new-player" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Has any player ever played through Dark Souls to the end?</label>
+				<label class="radio">
+					<input type="radio" name="completed" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="completed" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Are you playing with a NEW CHARACTER or NEW GAME PLUS?</label>
+				<label class="radio">
+					<input type="radio" name="new-game" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="new-game" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Does anyone plan on doing alot of PvP during this drinking souls session?</label>
+				<label class="radio">
+					<input type="radio" name="pvp" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="pvp" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Are any of the players prone to Rage Quitting?</label>
+				<label class="radio">
+					<input type="radio" name="rage-quit" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="rage-quit" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Is any player prone to using annoying catch phrases/quotes? (ex: "Like a Boss")</label>
+				<label class="radio">
+					<input type="radio" name="cunt" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="cunt" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<fieldset class="well">
+				<label>Is anyone going to be watching (but not playing) during your round of Drinking Souls?</label>
+				<label class="radio">
+					<input type="radio" name="spectators" value="true" checked>
+					Yes
+				</label>
+				<label class="radio">
+					<input type="radio" name="spectators" value="false">
+					No
+				</label>
+			</fieldset>
+
+			<button type="submit" name="submit" value="Get rules!" class="btn-primary btn"><i class="icon-glass icon-white"></i> Get Rules!</button>
+		</form>
+		<button id="show-hide" class="btn"><i class="icon-plus"></i> show/hide form</button>
+
+		<p>Just a little info about this. This is a quick and dirty JavaScript prototype of <a href="http://preparetodrink.com/">preparetodrink.com</a>.</p>
+		<p>Created by <a href="https://github.com/BellendSebastian/">Bellend Sebastian</a> in the space of about 2 hours or something.</p>
+		<p>How this works. It uses localStorage to store your previous search and repopulates the form based on that saved setting (or uses a clear form if no settings found). Filling out the form and submitting it will update the stored query string. So if you come back to this page in the same browser in future, you should get the same results as last time.</p>
+		<p><strong>TODO</strong>:<br>Still need to find a nicer way to link to the site to get a specific set of rules, and I need to find more rules in the original as it would appear that certain questions are completely ignored.</p>
+	</div>
+
+	<script>
+		yepnope([
+			{ load: "http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js" },
+			{ load: "js/bootstrap.min.js" },
+			{ load: "js/script.js",
+				complete: function() {
+					init();
+				}
+			}]);
+	</script>
+</body>
+</html>

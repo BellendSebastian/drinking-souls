@@ -1,0 +1,7 @@
+html 							{ overflow-y: scroll; }
+form .well 						{ width: 555px; }
+h1, #results-list 				{ margin-left: 25px; }
+.container 						{ margin: 0 auto; width: 620px; float: none; }
+button[type=submit], fieldset 	{ margin-left: 5px; }
+#show-hide, p 					{ margin: 0 0 25px 25px; }
+#results-list 					{ display: none; }
